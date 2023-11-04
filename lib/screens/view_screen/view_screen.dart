@@ -10,7 +10,14 @@ class ViewScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: const Text('ViewScreen'),
+        backgroundColor: const Color.fromARGB(255, 236, 226, 187),
+        title: const Text(
+          'ViewScreen',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: const HobbyList(),
     );

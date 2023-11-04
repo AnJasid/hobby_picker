@@ -13,7 +13,9 @@ class HobbyList extends StatelessWidget {
         vertical: 30,
       ),
       itemCount: hobbyDetails.length,
-      itemBuilder: (BuildContext context, index) => const HobbyItem(),
+      itemBuilder: (BuildContext context, index) => HobbyItem(
+        data: hobbyDetails[index],
+      ),
       separatorBuilder: (BuildContext context, index) =>
           const SizedBox(height: 20),
     );

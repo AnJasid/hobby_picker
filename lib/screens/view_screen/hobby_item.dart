@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hobby_picker/model/hobby_model.dart';
 
 class HobbyItem extends StatelessWidget {
-  const HobbyItem({super.key});
+  const HobbyItem({
+    super.key,
+    required this.data,
+  });
+
+  final HobbyModel data;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 120,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.transparent,
@@ -15,6 +21,23 @@ class HobbyItem extends StatelessWidget {
           width: 2.0,
         ),
         borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              data.hobbyTitle.toString(),
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 30),
+            Text(
+              data.hobbyDesc.toString(),
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }
