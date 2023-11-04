@@ -28,15 +28,20 @@ class _HomeScreenState extends State<HomeScreen> {
     shuffleTimer?.cancel();
   }
 
+  // Updated shuffleHobby() method
   void shuffleHobby() {
     final random = Random();
+    String newHobbyTitle;
     HobbyModel newHobby;
     do {
-      newHobby = hobbyDetails[random.nextInt(hobbyDetails.length)];
-    } while (newHobby.hobbyTitle == currentHobby.hobbyTitle);
+      newHobbyTitle =
+          hobbyDetails[random.nextInt(hobbyDetails.length)].hobbyTitle;
+      newHobby =
+          hobbyDetails.firstWhere((hobby) => hobby.hobbyTitle == newHobbyTitle);
+    } while (newHobbyTitle == currentHobby.hobbyTitle);
 
     setState(() {
-      currentHobby = newHobby;
+      currentHobby = newHobby.copyWith(hobbyDesc: '');
     });
     if (isShuffling) {
       shuffleTimer = Timer(const Duration(milliseconds: 100),
@@ -52,23 +57,46 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 236, 226, 187),
+        title: const Text(
+          'Home Screen',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(currentHobby.hobbyTitle,
-                  style: const TextStyle(fontSize: 24.0)),
-              const SizedBox(height: 20),
-              Text(currentHobby.hobbyDesc), // Display the hobby description
-              TextButton(
-                onPressed: () {
-                  if (!isShuffling) {
-                    startShuffle();
-                  }
-                },
-                child: const Text('Reshuffle'),
+            children: [
+              const SizedBox(height: 170),
+              Text(
+                currentHobby.hobbyTitle,
+                style: const TextStyle(fontSize: 24.0),
+              ),
+              const SizedBox(height: 50),
+              Text(currentHobby.hobbyDesc),
+              const Spacer(),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF28b4cc),
+                  ),
+                  onPressed: () {
+                    if (!isShuffling) {
+                      startShuffle();
+                    }
+                  },
+                  child: const Text('Reshuffle'),
+                ),
               ),
             ],
           ),
