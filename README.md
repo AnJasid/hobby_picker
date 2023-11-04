@@ -1,4 +1,4 @@
-# hobby_picker
+# Hobby Picker
 
 A new Flutter project.
 
