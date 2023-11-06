@@ -70,35 +70,46 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 170),
-              Text(
-                currentHobby.hobbyTitle,
-                style: const TextStyle(fontSize: 24.0),
-              ),
-              const SizedBox(height: 50),
-              Text(currentHobby.hobbyDesc),
-              const Spacer(),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF28b4cc),
-                  ),
-                  onPressed: () {
-                    if (!isShuffling) {
-                      startShuffle();
-                    }
-                  },
-                  child: const Text('Reshuffle'),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/bg.png'),
+            opacity: 0.08,
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 170),
+                Text(
+                  currentHobby.hobbyTitle,
+                  style: const TextStyle(fontSize: 24.0),
                 ),
-              ),
-            ],
+                const SizedBox(height: 50),
+                Text(currentHobby.hobbyDesc),
+                const Spacer(),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF28b4cc),
+                    ),
+                    onPressed: () {
+                      if (!isShuffling) {
+                        startShuffle();
+                      }
+                    },
+                    child: const Text('Reshuffle'),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
