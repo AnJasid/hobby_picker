@@ -18,6 +18,60 @@ class AddScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            children: [
+              const SizedBox(height: 50),
+              TextField(
+                textAlign: TextAlign.center,
+                decoration: InputDecoration(
+                  hintText: 'Please add new hobby name',
+                  alignLabelWithHint: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF28b4cc),
+                      width: 2.0,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF28b4cc),
+                      width: 2.0,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 50),
+              TextField(
+                textAlign: TextAlign.center,
+                maxLines: 8,
+                decoration: InputDecoration(
+                  hintText: 'Please enter hobby description',
+                  alignLabelWithHint: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF28b4cc),
+                      width: 2.0,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF28b4cc),
+                      width: 2.0,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
