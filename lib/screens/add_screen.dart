@@ -68,6 +68,17 @@ class AddScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              const Spacer(),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF28b4cc),
+                  ),
+                  onPressed: () {},
+                  child: const Text('Add'),
+                ),
+              ),
             ],
           ),
         ),
