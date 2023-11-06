@@ -12,12 +12,11 @@ class HobbyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.transparent,
         border: Border.all(
-          color: Colors.blue,
+          color: const Color(0xFF28b4cc),
           width: 2.0,
         ),
         borderRadius: BorderRadius.circular(10),
