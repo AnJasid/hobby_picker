@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/bg.png'),
-            opacity: 0.08,
+            opacity: 0.06,
             fit: BoxFit.cover,
           ),
         ),
