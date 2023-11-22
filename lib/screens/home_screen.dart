@@ -60,7 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 236, 226, 187),
         title: const Text(
           'Home Screen',
@@ -90,6 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   currentHobby.hobbyTitle,
                   style: const TextStyle(fontSize: 24.0),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 50),
                 Text(currentHobby.hobbyDesc),

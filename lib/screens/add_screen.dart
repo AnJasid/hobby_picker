@@ -8,10 +8,9 @@ class AddScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 236, 226, 187),
         title: const Text(
-          'AddScreen',
+          'Add New Hobby',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,

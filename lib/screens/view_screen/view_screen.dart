@@ -9,10 +9,9 @@ class ViewScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 236, 226, 187),
         title: const Text(
-          'ViewScreen',
+          'View Hobby List',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
